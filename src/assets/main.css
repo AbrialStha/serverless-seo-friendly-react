@@ -1,3 +1,21 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+
+::-webkit-scrollbar-thumb {
+    background: #c62641;
+}
+
 .App-header {
     background: #c62641;
     min-height: 30vh;
@@ -5,7 +23,7 @@
 }
 
 .container {
-    padding-top:10px;
+    padding-top: 10px;
     margin-top: -20vh;
     background: #fff;
     min-height: 80vh;
@@ -18,13 +36,13 @@
 }
 
 .footer {
-    margin-top:15px;
-    padding-top:10px;
+    margin-top: 15px;
+    padding-top: 10px;
     color: #c62641;
 }
 
-.custom.card{
+.custom.card {
     margin-bottom: 10px;
-    border-left:1.5px solid;
+    border-left: 1.5px solid;
     border-left-color: #c62641;
 }
