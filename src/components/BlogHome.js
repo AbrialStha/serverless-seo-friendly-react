@@ -45,8 +45,16 @@ class BlogHome extends Component {
         <div>
           {this.state.resp.data.map((post) => {
             return (
-              <div key={post.slug}>
-                <Link to={`/post/${post.slug}`}>{post.title}</Link>
+              <div className="custom card" key={post.slug}>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    <Link to={`/post/${post.slug}`}>{post.title}</Link>
+                  </h5>
+                  <p className="card-text">
+                    {post.summary}
+                  </p>
+                  <Link to={`/post/${post.slug}`} className="btn btn-primary">Read More</Link>
+                </div>
               </div>
             )
           })}

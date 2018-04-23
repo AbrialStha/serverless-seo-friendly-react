@@ -1,0 +1,30 @@
+.App-header {
+    background: #c62641;
+    min-height: 30vh;
+    padding: 0 3%;
+}
+
+.container {
+    padding-top:10px;
+    margin-top: -20vh;
+    background: #fff;
+    min-height: 80vh;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.navbar {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.footer {
+    margin-top:15px;
+    padding-top:10px;
+    color: #c62641;
+}
+
+.custom.card{
+    margin-bottom: 10px;
+    border-left:1.5px solid;
+    border-left-color: #c62641;
+}

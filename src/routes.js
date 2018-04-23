@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import BlogHome from './components/BlogHome'
 import BlogPost from './components/BlogPost'
