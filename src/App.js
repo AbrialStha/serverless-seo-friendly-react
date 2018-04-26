@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import AboutMe from './components/AboutMe'
+import Footer from './components/Footer'
+import Subscribe from './components/Subscribe'
 
 class App extends Component {
     render() {
@@ -8,7 +11,7 @@ class App extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
-                            {/* <AboutMe /> */}
+                            <AboutMe />
                         </div>
 
                         <div className="col-md-9">
@@ -16,11 +19,11 @@ class App extends Component {
                             <div className="col-md-12 page-body">
                                 {this.props.children}
                                 {/* Subscription */}
-                                {/* <Subscribe /> */}
+                                <Subscribe />
                             </div>
                             {/* Footer margin */}
                             <div className="col-md-12 page-body margin-top-50 footer">
-                                {/* <Footer /> */}
+                                <Footer />
                             </div>
                         </div>
                     </div>

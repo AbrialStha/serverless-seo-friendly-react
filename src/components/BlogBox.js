@@ -14,10 +14,12 @@ class BlogBox extends Component {
                     <Link to={`/post/${post.slug}`}>
                         <h1>{post.title}</h1>
                     </Link>
-                    {post.featured_image && <img className="card-img-top" src={post.featured_image} alt="Card image cap" />}
                 </div>
                 <div className="post-info">
                     <span>{Date(post.published).split(' ').slice(0, 4).join(' ')} / by <Link to="about">{post.author.first_name} {post.author.last_name}</Link></span>
+                </div>
+                <div className="post-image margin-top-40 margin-bottom-40">
+                    {post.featured_image && <img className="card-img-top" src={post.featured_image} alt="Card image cap" />}
                 </div>
                 <p>
                     {post.summary}
