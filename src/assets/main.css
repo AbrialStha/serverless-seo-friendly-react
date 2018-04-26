@@ -41,8 +41,11 @@ html {
     color: #c62641;
 }
 
-.custom.card {
-    margin-bottom: 10px;
-    border-left: 1.5px solid;
-    border-left-color: #c62641;
+.custom {
+    margin-bottom: 5rem;
+    border-left: 1.5px solid #c62641;
+}
+
+.BlogContent {
+    overflow-y: hidden;
 }

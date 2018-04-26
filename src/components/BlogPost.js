@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import Butter from 'buttercms'
-import { Helmet } from "react-helmet";
-
-const butter = Butter('6f0ca3109009b837bb926dda46581fa34b37f63c');
+import React, { Component } from 'react'
+import { Helmet } from "react-helmet"
+import butter from '../utls/butter'
+import './style.css'
 
 class BlogPost extends Component {
 
@@ -30,7 +29,7 @@ class BlogPost extends Component {
       const post = this.state.post;
 
       return (
-        <div>
+        <div class="BlogContent">
           <Helmet>
             <title>{post.seo_title}</title>
             <meta name="description" content={post.meta_description} />
@@ -38,7 +37,7 @@ class BlogPost extends Component {
           </Helmet>
 
           <h1>{post.title}</h1>
-          <div dangerouslySetInnerHTML={{__html: post.body}} />
+          <div dangerouslySetInnerHTML={{ __html: post.body }} />
         </div>
       );
     } else {

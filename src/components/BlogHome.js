@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Butter from 'buttercms'
-
-const butter = Butter('6f0ca3109009b837bb926dda46581fa34b37f63c')
+import butter from '../utls/butter'
 
 class BlogHome extends Component {
 
@@ -42,29 +40,39 @@ class BlogHome extends Component {
       const { next_page, previous_page } = this.state.resp.meta;
 
       return (
-        <div>
-          {this.state.resp.data.map((post) => {
-            return (
-              <div className="custom card" key={post.slug}>
-                <div className="card-body">
-                  <h5 className="card-title">
-                    <Link to={`/post/${post.slug}`}>{post.title}</Link>
-                  </h5>
-                  <p className="card-text">
-                    {post.summary}
-                  </p>
-                  <Link to={`/post/${post.slug}`} className="btn btn-primary">Read More</Link>
+        <div className="row">
+          <div className="col-8">
+            {this.state.resp.data.map((post) => {
+              return (
+                <div className="custom" key={post.slug}>
+                  {post.featured_image && <img className="card-img-top" src={post.featured_image} alt="Card image cap" />}
+                  {console.log(post)}
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      <Link to={`/post/${post.slug}`}>{post.title}</Link>
+                    </h5>
+                    <div className="mb-1 text-muted">
+                      {Date(post.published).split(' ').slice(0, 4).join(' ')}
+                    </div>
+                    <p className="card-text">
+                      {post.summary}
+                    </p>
+                    <Link to={`/post/${post.slug}`} className="btn btn-primary">Read More</Link>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
 
-          <br />
+            <br />
 
-          <div>
-            {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+            <div>
+              {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
 
-            {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
+              {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
+            </div>
+          </div>
+          <div className="col-3">
+            something
           </div>
         </div>
       );
