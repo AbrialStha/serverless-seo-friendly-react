@@ -38,48 +38,42 @@ class BlogHome extends Component {
   render() {
     if (this.state.loaded) {
       const { next_page, previous_page } = this.state.resp.meta;
-
       return (
         <div className="row">
-          <div className="col-8">
-            {this.state.resp.data.map((post) => {
-              return (
-                <div className="custom" key={post.slug}>
-                  {post.featured_image && <img className="card-img-top" src={post.featured_image} alt="Card image cap" />}
-                  {console.log(post)}
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      <Link to={`/post/${post.slug}`}>{post.title}</Link>
-                    </h5>
-                    <div className="mb-1 text-muted">
-                      {Date(post.published).split(' ').slice(0, 4).join(' ')}
-                    </div>
-                    <p className="card-text">
-                      {post.summary}
-                    </p>
-                    <Link to={`/post/${post.slug}`} className="btn btn-primary">Read More</Link>
-                  </div>
-                </div>
-              )
-            })}
+          <div className="sub-title">
+            <h2>My Blog</h2>
+            <Link to='contact'><i className="icon-envelope"></i></Link>
+          </div>
 
-            <br />
+          <div className="col-md-12 content-page">
+            {
+              this.state.resp.data.map((post) => {
+                return (
+                  <BlogHome post={post} key={post.slug} />
+                )
+              })
+            }
 
-            <div>
+            <div className="col-md-12 text-center">
+              {/* <a href="javascript:void(0)" id="load-more-post" className="load-more-button">Load</a>
+                        <div id="post-end-message"></div> */}
               {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-
               {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
             </div>
-          </div>
-          <div className="col-3">
-            something
+
           </div>
         </div>
-      );
+      )
     } else {
       return (
-        <div>
-          Loading...
+        <div className="row">
+          <div className="sub-title">
+            <h2>My Blog</h2>
+            <Link to='contact'><i className="icon-envelope"></i></Link>
+          </div>
+          <div className="col-md-12 content-page">
+            <Loader />
+          </div>
         </div>
       )
     }
