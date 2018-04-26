@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import butter from '../utls/butter'
+import Loader from './Loader'
+import BlogBox from './BlogBox'
 
 class BlogHome extends Component {
 
@@ -38,6 +40,7 @@ class BlogHome extends Component {
   render() {
     if (this.state.loaded) {
       const { next_page, previous_page } = this.state.resp.meta;
+
       return (
         <div className="row">
           <div className="sub-title">
@@ -46,24 +49,24 @@ class BlogHome extends Component {
           </div>
 
           <div className="col-md-12 content-page">
-            {
-              this.state.resp.data.map((post) => {
-                return (
-                  <BlogHome post={post} key={post.slug} />
-                )
-              })
-            }
+            {this.state.resp.data.map((post) => {
+              return (
+                <BlogBox post={post} key={post.slug} />
+              )
+            })}
+
+            <br />
 
             <div className="col-md-12 text-center">
               {/* <a href="javascript:void(0)" id="load-more-post" className="load-more-button">Load</a>
-                        <div id="post-end-message"></div> */}
+                            <div id="post-end-message"></div> */}
               {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
               {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
             </div>
-
           </div>
+          
         </div>
-      )
+      );
     } else {
       return (
         <div className="row">
