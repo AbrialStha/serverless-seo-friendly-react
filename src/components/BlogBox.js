@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class BlogBox extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         // console.log('From BlogPost', this.props.post)
         const post = this.props.post
@@ -19,7 +16,7 @@ class BlogBox extends Component {
                     <span>{Date(post.published).split(' ').slice(0, 4).join(' ')} / by <Link to="about">{post.author.first_name} {post.author.last_name}</Link></span>
                 </div>
                 <div className="post-image margin-top-40 margin-bottom-40">
-                    {post.featured_image && <img className="card-img-top" src={post.featured_image} alt="Card image cap" />}
+                    {post.featured_image && <img className="card-img-top" src={post.featured_image} aria-hidden alt="Card image cap" />}
                 </div>
                 <p>
                     {post.summary}

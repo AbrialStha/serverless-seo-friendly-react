@@ -1,5 +1,5 @@
 import React from 'react'
-import mypic from '../assets/my-pic.png'
+import mypic from '../assets/my-pic2.png'
 import { Link } from 'react-router-dom'
 
 const AboutMe = (props) => (
