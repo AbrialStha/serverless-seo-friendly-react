@@ -6,7 +6,7 @@ const Footer = (props) => (
         <p>© Copyright {Date().split(' ').slice(3, 4).join(' ')} DevBlog. All rights reserved</p>
 
         <div className="uipasta-credit">
-            Design By <Link to="http://github.com/abrialstha">UiPasta</Link>
+            Design By <Link to="http://github.com/abrialstha">abrialstha</Link>
         </div>
 
     </footer>
