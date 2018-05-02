@@ -12,6 +12,14 @@ class CategoryHome extends Component {
         this.state = {
             loaded: false
         };
+
+        butter.category.list({ slug: this.props.match.params.category })
+            .then((resp) => {
+                console.log(resp.data.data[0].name);
+                this.setState({
+                    CategoryName: resp.data.data[0].name
+                })
+            })
     }
 
     fetchPosts(category) {
@@ -44,8 +52,7 @@ class CategoryHome extends Component {
             return (
                 <div className="row">
                     <div className="sub-title">
-                        <h2>My Blog</h2>
-                        <Link to='contact'><i className="icon-envelope"></i></Link>
+                        <h3>Category: {this.state.CategoryName}</h3>
                     </div>
 
                     <div className="col-md-12 content-page">

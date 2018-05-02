@@ -28,7 +28,7 @@ class SearchPage extends Component {
                     query: '',
                     resp: resp.data.data
                 })
-                console.log(resp.data)
+                // console.log(resp.data)
             })
             .catch(function (resp) {
                 console.log(resp)
@@ -41,7 +41,7 @@ class SearchPage extends Component {
             <div className="SearchContent">
                 <div className="row">
                     <div className="sub-title">
-                        <form onSubmit={this.onSubmit}>
+                        <form onSubmit={this.onSubmit} autoComplete="off">
                             <input
                                 value={query}
                                 onChange={this.onChange}
