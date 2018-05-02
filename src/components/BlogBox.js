@@ -13,7 +13,7 @@ class BlogBox extends Component {
                     </Link>
                 </div>
                 <div className="post-info">
-                    <span>{Date(post.published).split(' ').slice(0, 4).join(' ')} / by <Link to="about">{post.author.first_name} {post.author.last_name}</Link></span>
+                    <span>{Date(post.published).split(' ').slice(0, 4).join(' ')} / by <Link to="/about">{post.author.first_name} {post.author.last_name}</Link></span>
                 </div>
                 <div className="post-image margin-top-40 margin-bottom-40">
                     {post.featured_image && <img className="card-img-top" src={post.featured_image} aria-hidden alt="Card image cap" />}
@@ -21,7 +21,7 @@ class BlogBox extends Component {
                 <p>
                     {post.summary}
                 </p>
-                <Link to={`post/${post.slug}`} className="button button-style button-anim fa fa-long-arrow-right">
+                <Link to={`/post/${post.slug}`} className="button button-style button-anim fa fa-long-arrow-right">
                     <span>Read More</span>
                 </Link>
             </div>
