@@ -53,16 +53,18 @@ class SearchPage extends Component {
                             <button className="hidden" type="button">Go!</button>
                         </form>
                     </div>
-
                     <div className="col-md-12 content-page">
+                        <Categories />
                         {
                             !loaded ?
-                                <Loader />
+                                <div className="col-md-12 content-page" style={{ minWidth: "20px" }}>
+                                    <Loader />
+                                </div>
                                 :
                                 resp == '' ?
-                                    <div className="col-md-12 content-page">
+                                    <div className="col-md-12 content-page" style={{ minWidth: "20px" }}>
                                         Nothing to show here
-                                        </div>
+                                    </div>
                                     :
                                     <div className="col-md-12 content-page">
                                         {resp.map((post) => {
@@ -73,7 +75,6 @@ class SearchPage extends Component {
                                     </div>
 
                         }
-                        <Categories />
                     </div>
                 </div>
             </div>
