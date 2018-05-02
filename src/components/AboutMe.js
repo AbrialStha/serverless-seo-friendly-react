@@ -12,7 +12,8 @@ const AboutMe = (props) => (
                     <li><Link to="/">Home</Link></li>
                     <li><Link to='/about'>About</Link></li>
                     <li><Link to='/work'>Work</Link></li>
-                    <li><Link to='/Contact'>Contact</Link></li>
+                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/search'>Search</Link></li>
                 </ul>
                 {/* <hr />
                 <ul className="menu-link">

@@ -8,6 +8,8 @@ import Subscribe from './components/Subscribe'
 import BlogHome from './components/BlogHome'
 import BlogPost from './components/BlogPost'
 import About from './components/AboutPage'
+import Search from './components/SearchPage'
+import categoryHome from './components/CategoryHome'
 
 //Just for Templating the Initial HTML layout
 class App extends Component {
@@ -46,8 +48,10 @@ const MainRoutes = (props) => (
                 <Route exact path="/" component={BlogHome} />
                 <Route path="/p/:page" component={BlogHome} />
                 <Route path="/post/:slug" component={BlogPost} />
+                <Route path="/category/:category" component={categoryHome} />
                 <Route path="/about" component={About} />
-                <Redirect from='*' to='/' />
+                <Route path="/search" component={Search} />
+                {/* <Redirect from='*' to='/' /> */}
             </Switch>
         </App>
     </BrowserRouter>

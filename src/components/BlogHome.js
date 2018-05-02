@@ -15,7 +15,7 @@ class BlogHome extends Component {
   }
 
   fetchPosts(page) {
-    butter.post.list({ page: page, page_size: 10 }).then((resp) => {
+    butter.post.list({ page: page, page_size: 5 }).then((resp) => {
       this.setState({
         loaded: true,
         resp: resp.data
@@ -64,7 +64,7 @@ class BlogHome extends Component {
               {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
             </div>
           </div>
-          
+
         </div>
       );
     } else {

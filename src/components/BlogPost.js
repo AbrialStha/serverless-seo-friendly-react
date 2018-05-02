@@ -30,7 +30,7 @@ class BlogPost extends Component {
       const post = this.state.post;
 
       return (
-        <div class="BlogContent">
+        <div className="BlogContent">
           <Helmet>
             <title>{post.seo_title}</title>
             <meta name="description" content={post.meta_description} />
