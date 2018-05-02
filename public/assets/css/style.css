@@ -1801,3 +1801,7 @@ blockquote {
 .uipasta-credit a:hover {
     color: #333333;
 }
+
+.blog_comments{
+    padding:25px;
+}

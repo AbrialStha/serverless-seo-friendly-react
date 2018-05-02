@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import butter from '../utls/butter'
 import { Link } from 'react-router-dom'
 import Loader from './Loader'
+import Comments from './Comment'
 
 class BlogPost extends Component {
 
@@ -62,6 +63,7 @@ class BlogPost extends Component {
               </div>
               {/* <!-- You May Also Like End --> */}
             </div>
+            <Comments post={post} />
           </div>
         </div>
       );

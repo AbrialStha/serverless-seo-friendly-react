@@ -60,7 +60,7 @@ class SearchPage extends Component {
                                     <Loader />
                                 </div>
                                 :
-                                resp == '' ?
+                                resp === '' ?
                                     <div className="col-md-12 content-page" style={{ minWidth: "20px" }}>
                                         Nothing to show here
                                     </div>
