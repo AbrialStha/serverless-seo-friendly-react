@@ -28,7 +28,6 @@ class SearchPage extends Component {
                     query: '',
                     resp: resp.data.data
                 })
-                // console.log(resp.data)
             })
             .catch(function (resp) {
                 console.log(resp)

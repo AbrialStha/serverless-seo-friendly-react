@@ -19,7 +19,6 @@ class ShowCategory extends Component {
                     loaded: true,
                     resp: resp.data
                 })
-                // console.log(resp.data)
             })
     }
 
