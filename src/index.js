@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import AboutMe from './components/AboutMe'
-import Footer from './components/Footer'
-import Subscribe from './components/Subscribe'
-import BlogHome from './components/BlogHome'
-import BlogPost from './components/BlogPost'
-import About from './components/AboutPage'
-import Search from './components/SearchPage'
-import categoryHome from './components/CategoryHome'
+import {
+    AboutMe,
+    About,
+    Footer,
+    Subscribe,
+    BlogHome,
+    BlogPost,
+    categoryHome,
+    Search
+} from './routes'
+
+
 
 //Just for Templating the Initial HTML layout
 class App extends Component {
